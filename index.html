@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <title>Aramusic</title>
+</head>
+<body>
+<div class="wrapper">
+
+  <div class="player">
+    <div class="player_navbar">
+      <div>Сейчас играет</div>
+      <img src="img/icons/musical-notes.svg" alt="" width="20">
+    </div>
+    <img src="img/covers/maxcorzhnetvoy.jpg" alt="" class="player_cover" id="cover_music">
+    <div class="player_title" id="player_title">Не твой</div>
+    <div class="player_singer" id="player_singer">Макс Корж</div>
+    <div class="player_progress_container" id="progress_container">
+      <div class="player_progress_bar" id="progress_bar"></div>
+    </div>
+    <div class="player_progress_timer">
+      <p id="current_time">00:00</p>
+      <p id="duration_time">3:20</p>
+    </div>
+    <div class="player_btns">
+      <div class="player_btns_volume">
+        <img src="img/icons/volume-mute.svg" alt="" class="volume_mute" id="volume-mute">
+        <img src="img/icons/volume-high.svg" alt="" class="volume_hight" id="volume-hight">
+      </div>
+      <div class="player_btns_control">
+        <img src="img/icons/prev.svg" alt="" id="prev_btn" class="prev_audio">
+        <img src="img/icons/play.svg" alt="" id="play_btn" class="play_audio">
+        <img src="img/icons/pause.svg" alt="" id="pause_btn" class="pause_audio">
+        <img src="img/icons/next.svg" alt="" id="next_btn" class="next_audio">
+      </div>
+      <div class="player_btns_favorite">
+        <img src="img/icons/star.svg" alt="" class="favorite_btn" id="favorite">
+        <img src="img/icons/star-filled.svg" alt="" class="favorite_btn_filled" id="favorite-filled">
+      </div>
+    </div>
+    <audio src="audio/Не твой.mp3" id="audio_player"></audio>
+  </div>
+
+  <div>
+    Text
+  </div>
+</div>
+
+<script src="js/music-list.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
