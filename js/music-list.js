@@ -1,56 +1,80 @@
 let musicList = [
   {
+    name: "Heat Waves",
+    artist: "Glass Animals (feat. iann dior)",
+    img: "heatwavesglassanimals",
+    src: "GlassAnimalsHeatWavesfeatIanndior"
+  },
+  {
     name: "Не твой",
     artist: "Макс Корж",
     img: "maxcorzhnetvoy",
-    src: "Макс Корж - Не твой"
+    src: "МаксКоржНетвой",
+  },
+  {
+    name: "Get Lucky",
+    artist: "Daft Punk (feat. Pharrell Williams)",
+    img: "daftpunkgetlucky",
+    src: "DaftPunkfeatPharrellWilliamsNileRodgersGetLucky",
   },
   {
     name: "Рапапам",
-    artist: "Miyagi & Эндшпиль (feat.9 Грамм)",
+    artist: "Miyagi & Эндшпиль (feat. 9 Грамм)",
     img: "miyagiendshpilrapapam",
-    src: "Miyagi & Эндшпиль - Рапапам"
+    src: "MiyagiЭндшпильРапапам"
   },
   {
     name: "Шантаж",
     artist: "Макс Корж",
     img: "maxcorzhshantazh",
-    src: "Макс Корж - Шантаж"
+    src: "МаксКоржШантаж"
   },
   {
     name: "Utopia",
     artist: "Miyagi & Andy Panda",
     img: "miyagiandyutopia",
-    src: "Miyagi & Andy Panda - Utopia"
+    src: "MiyagiAndyPandaUtopia"
   },
   {
     name: "Балконы",
     artist: "Макс Корж",
     img: "maxcorzhpsixipopadautvtop",
-    src: "Макс Корж - Балконы"
+    src: "МаксКоржБалконы"
   },
   {
     name: "Мальдивы",
     artist: "Xcho",
     img: "xchomaldivy",
-    src: "Xcho - Мальдивы"
+    src: "XchoМальдивы"
   },
   {
     name: "2 типа людей",
     artist: "Макс Корж",
     img: "maxcorzh2tipaludey",
-    src: "Макс Корж - 2 типа людей"
+    src: "МаксКорж2типалюдей"
   },
   {
     name: "I Got Love",
-    artist: "Miyagi & Эндшпиль (feat.Рем Дигга)",
+    artist: "Miyagi & Эндшпиль (feat. Рем Дигга)",
     img: "miyagiendshpiligotlove",
-    src: "Miyagi & Эндшпиль - I Got Love"
+    src: "MiyagiЭндшпильIGotLove"
   },
   {
     name: "Доверял",
     artist: "Макс Корж",
     img: "maxcorzhpsixipopadautvtop",
-    src: "Макс Корж - Доверял"
+    src: "МаксКоржДоверял"
+  },
+  {
+    name: "Отпускай",
+    artist: "Три дня дождя",
+    img: "tridnyadozdhyaotpuskay",
+    src: "ТриднядождяОтпускай"
+  },
+  {
+    name: "Кайф ты поймала",
+    artist: "Konfuz",
+    img: "caiftypoymalakonfuz",
+    src: "KonfuzКайфтыпоймала"
   }
 ]

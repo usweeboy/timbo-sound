@@ -14,7 +14,8 @@ function loadingSong(indexNumb) {
   titleSong.innerHTML = musicList[indexNumb - 1].name;
   singerPlayer.innerHTML = musicList[indexNumb - 1].artist;
   coverMusic.src = `img/covers/${musicList[indexNumb - 1].img}.jpg`;
-  audioPlayer.src = `audio/${musicList[indexNumb - 1].src}.mp3`
+  audioPlayer.src = `audio/${musicList[indexNumb - 1].src}.mp3`;
+  playingNow();
 }
 
 // Кнопки, функции: воспроизвести, пауза, следущующая и предыдущая песня.
@@ -33,6 +34,7 @@ function playAudio() {
   playBtn.style.display = 'none'
   pauseBtn.style.display = 'block'
   coverMusic.className = 'player_cover_rotation'
+  playingNow();
 }
 
 function pauseAudio() {
@@ -40,6 +42,7 @@ function pauseAudio() {
   playBtn.style.display = 'block'
   pauseBtn.style.display = 'none'
   coverMusic.className = 'player_cover'
+  playingNow();
 }
 
 function nextAudio() {
@@ -47,6 +50,7 @@ function nextAudio() {
   musicIndex > musicList.length ? musicIndex = 1 : musicIndex = musicIndex;
   loadingSong(musicIndex);
   playAudio();
+  playingNow();
 }
 
 function prevAudio() {
@@ -54,6 +58,7 @@ function prevAudio() {
   musicIndex < 1 ? musicIndex = musicList.length : musicIndex = musicIndex;
   loadingSong(musicIndex);
   playAudio();
+  playingNow();
 }
 
 // Прогресс бар и прогресс времени.
@@ -126,6 +131,82 @@ favoriteFilled.addEventListener('click', () => {
   favorite.style.display = 'block'
   favoriteFilled.style.display = 'none'
 })
+
+// Музыкальный блок (Рекомендации)
+let mainTag = document.querySelector("#music-block-references")
+
+for (let i = 0; i < musicList.length; i++) {
+  let sectionTag = `
+        <section class="music_block_audio" section-index="${i + 1}">
+          <div class="music_block_audio_one">
+            <div class="music_block_cover">
+              <img src="img/covers/${musicList[i].img}.jpg" alt="" class="music_cover" id="cover_music">
+              <div class="music_block_waves" id="music_waves">
+                <span class="music_block_waves_stroke"></span>
+                <span class="music_block_waves_stroke"></span>
+                <span class="music_block_waves_stroke"></span>
+              </div>
+              <div class="music_block_btns">
+                <img src="img/icons/play.svg" alt="" id="music_block_play_btn" class="music_block_play_audio">
+                <img src="img/icons/pause.svg" alt="" id="music_block_pause_btn" class="music_block_pause_audio">
+              </div>
+            </div>
+            <div class="music_block_audio_info">
+              <div class="musical_block_title">${musicList[i].name}</div>
+              <div class="musical_block_artist">${musicList[i].artist}</div>
+            </div>
+          </div>
+          <audio src="audio/${musicList[i].src}.mp3" class="${musicList[i].src}"></audio>
+          <div class="music_block_audio_two">
+            <div class="music_block_audio_duration">
+              <p id="${musicList[i].src}">3:20</p>
+            </div>
+          </div>
+        </section>`
+
+  mainTag.insertAdjacentHTML('beforeend', sectionTag);
+
+  let sectionMusicDuration = mainTag.querySelector(`#${musicList[i].src}`);
+  let sectionMusicTag = mainTag.querySelector(`.${musicList[i].src}`);
+
+  sectionMusicTag.addEventListener('loadeddata', () => {
+    let audioDuration = sectionMusicTag.duration;
+    let totalMin = Math.floor(audioDuration / 60);
+    let totalSec = Math.floor(audioDuration % 60);
+    if (totalSec < 10) {
+      totalSec = `0${totalSec}`;
+    };
+    sectionMusicDuration.innerHTML = `${totalMin}:${totalSec}`;
+  });
+};
+
+let allSectionTags = mainTag.querySelectorAll('section');
+function playingNow() {
+  for (let j = 0; j < allSectionTags.length; j++) {
+
+    let musicWaves = allSectionTags[j].querySelector('#music_waves');
+
+    if(allSectionTags[j].classList.contains('music_playing')){
+      allSectionTags[j].classList.remove('music_playing');
+      musicWaves.style.display = 'none'
+    };
+
+    if (allSectionTags[j].getAttribute('section-index') == musicIndex){
+      allSectionTags[j].classList.add('music_playing');
+      musicWaves.style.display = 'flex'
+    };
+  
+    allSectionTags[j].setAttribute('onclick','clicked(this)');
+  }
+}
+
+function clicked(element){
+  let getSectionIndex = element.getAttribute('section-index');
+  musicIndex = getSectionIndex;
+  loadingSong(musicIndex)
+  playAudio();    
+  playingNow();
+};
 
 
 
