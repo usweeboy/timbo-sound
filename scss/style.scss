@@ -286,6 +286,29 @@ body{
   }
 }
 
+@media (min-width: 0px) and (max-width: 1024px){
+  .wrapper{
+    .music_block{
+      .music_block_content_references{
+        .music_block_audio:hover{
+          .music_block_audio_one{
+            .music_block_cover{
+              .music_cover{
+                opacity: 0.6;
+              }
+              .music_block_btns{
+                .music_block_play_audio{
+                  display: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (min-width: 320px) and (max-width: 460px){
   .wrapper{
     .player{
