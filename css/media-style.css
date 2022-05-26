@@ -1,11 +1,5 @@
-@charset "UTF-8";
-@media (min-width: 0px) and (max-width: 1024px) {
-  .wrapper .musiс .music_content_main .music_block_audio:hover .music_block_audio_one .music_block_cover .music_block_btns .music_block_play_audio {
-    display: none;
-  }
-}
 @media (min-width: 320px) and (max-width: 460px) {
-  .wrapper .player {
+  .wrapper .player, .wrapper .player_radio {
     margin-top: 10px;
   }
   .wrapper .music {
@@ -16,6 +10,12 @@
   .wrapper .music .music_content_main .music_block_audio .music_block_audio_one .music_block_audio_info {
     width: 100%;
   }
+  .wrapper .music .music_content_main .music_block_audio:hover .music_block_audio_one .music_block_cover .music_block_btns .music_block_play_audio {
+    display: none;
+  }
+  .wrapper .music .music_content_radio .radio_block:hover .radio_block_cover .radio_block_btns .radio_block_play {
+    display: none;
+  }
 }
 @media (min-width: 461px) and (max-width: 785px) {
   .wrapper .player {
@@ -24,6 +24,12 @@
   .wrapper .music {
     margin-top: 30px;
     margin-left: 0px;
+  }
+  .wrapper .music .music_content_main .music_block_audio:hover .music_block_audio_one .music_block_cover .music_block_btns .music_block_play_audio {
+    display: none;
+  }
+  .wrapper .music .music_content_radio .radio_block:hover .radio_block_cover .radio_block_btns .radio_block_play {
+    display: none;
   }
 }
 @media (min-width: 786px) and (max-width: 800px) {
