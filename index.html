@@ -5,13 +5,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/normalize.css">
-  <title>Aramusic</title>
+  <link rel="stylesheet" href="css/reset-style.css">
+  <link rel="stylesheet" href="css/media-style.css">
+  <title>Музыкальный плеер</title>
 </head>
 <body>
 <div class="wrapper">
 
-  <div class="player">
+  <div class="player" id="player_block">
     <nav class="player_navbar">
       <div>Сейчас играет</div>
       <img src="img/icons/musical-notes.svg" alt="" width="20">
@@ -19,7 +20,7 @@
     <main class="player_content">
       <img src="img/covers/heatwavesglassanimals.jpg" alt="" class="player_cover" id="cover_music">
       <div class="player_title" id="player_title">Heat Waves</div>
-      <div class="player_singer" id="player_singer">Glass Animals (feat. iann dior)</div>
+      <div class="player_artist" id="player_artist">Glass Animals (feat. iann dior)</div>
       <div class="player_progress_container" id="progress_container">
         <div class="player_progress_bar" id="progress_bar"></div>
       </div>
@@ -28,7 +29,7 @@
         <p id="duration_time">3:20</p>
       </div>
     </main>
-    <div class="player_footer">
+    <footer class="player_footer">
       <div class="player_volume">
         <img src="img/icons/volume-mute.svg" alt="" class="volume_mute" id="volume-mute">
         <img src="img/icons/volume-high.svg" alt="" class="volume_hight" id="volume-hight">
@@ -40,27 +41,68 @@
         <img src="img/icons/next.svg" alt="" id="next_btn" class="next_audio">
       </div>
       <div class="player_favorite">
-        <img src="img/icons/star.svg" alt="" class="favorite_btn" id="favorite">
-        <img src="img/icons/star-filled.svg" alt="" class="favorite_filled" id="favorite-filled">
+        <img src="img/icons/heart-outline.svg" alt="" class="favorite_btn" id="favorite">
+        <img src="img/icons/heart-filled.svg" alt="" class="favorite_filled" id="favorite-filled">
       </div>
-    </div>
-    <audio src="audio/Не твой.mp3" id="audio_player"></audio>
+    </footer>
+    <audio src="audio/GlassAnimalsHeatWavesfeatIanndior.mp3" id="audio_player"></audio>
   </div>
 
-  <div class="music_block">
-    <nav class="music_block_navbar">
-      <div class="music_block_navbar_content">
-        <div class="music_block_navbar_references">Главная</div>
-        <div class="music_block_navbar_favorites">Избранное</div>
+  <div class="player_radio" id="player_radio_block">
+    <nav class="player_radio_navbar">
+      <div>Сейчас играет</div>
+      <img src="img/icons/musical-notes.svg" alt="" width="20">
+    </nav>
+    <main class="player_radio_content">
+      <img src="img/covers/novoeradio.jpg" alt="" class="player_radio_cover" id="cover_radio">
+      <div class="player_radio_title" id="player_radio_title">Новое Радио</div>
+    </main>
+    <footer class="player_radio_footer">
+      <div class="player_radio_volume">
+        <img src="img/icons/volume-mute.svg" alt="" class="volume_mute" id="radio-mute">
+        <img src="img/icons/volume-high.svg" alt="" class="volume_hight" id="radio-hight">
+      </div>
+      <div class="player_radio_controls">
+        <img src="img/icons/prev.svg" alt="" id="prev_radio_btn" class="prev_radio">
+        <img src="img/icons/play.svg" alt="" id="play_radio_btn" class="play_radio">
+        <img src="img/icons/pause.svg" alt="" id="pause_radio_btn" class="pause_radio">
+        <img src="img/icons/next.svg" alt="" id="next_radio_btn" class="next_radio">
+      </div>
+      <div class="player_radio_favorite">
+        <img src="img/icons/heart-outline.svg" alt="" class="favorite_btn" id="favorite">
+        <img src="img/icons/heart-filled.svg" alt="" class="favorite_filled" id="favorite-filled">
+      </div>
+    </footer>
+    <audio src="https://icecast-newradio.cdnvideo.ru/newradio3" id="radio_player"></audio>
+  </div>
+
+  <div class="music">
+    <nav class="music_navbar">
+      <form class="music_navbar_search">
+        <img src="img/icons/search.svg" alt="">
+        <input type="search" name="" id="" class="input_search_music" placeholder="Поиск по музыке">
+      </form>
+      <div class="music_navbar_menu">
+        <img src="img/icons/burger-menu.svg" alt="" id="navbar_menu">
+        <img src="img/icons/close.svg" alt="" id="navbar_menu_close">
       </div>
     </nav>
-    <main class="music_block_content_references" id="music-block-references">
-    </main>
+    <div class="music_navbar_menu_content" id="navbar_menu_content">
+      <ul class="music_navbar_list">
+        <li class="music_navbar_item_active" id="router_to_main">Главная</li>
+        <li>Избранное</li>
+        <li id="router_to_radio">Радио</li>
+      </ul>
+    </div>
+    <div class="music_content_main" id="music-content-main"></div>
+    <div class="music_content_radio" id="music-content-radio"></div>
   </div>
 
 </div>
 
+<script src="js/radio-list.js"></script>
 <script src="js/music-list.js"></script>
 <script src="js/main.js"></script>
+<script src="js/radio.js"></script>
 </body>
 </html>

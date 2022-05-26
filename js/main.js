@@ -1,13 +1,13 @@
-// Загрузка песни, обложки и ее названия
+// Загрузка песни, обложка и ее название.
 let audioPlayer = document.querySelector('#audio_player');
 let coverMusic = document.querySelector('#cover_music');
 let titleSong = document.querySelector('#player_title');
-let singerPlayer = document.querySelector('#player_singer');
+let singerPlayer = document.querySelector('#player_artist');
 
 let musicIndex = 1;
 
 window.addEventListener('load', () => {
-  loadingSong(musicIndex)
+  loadingSong(musicIndex);
 })
 
 function loadingSong(indexNumb) {
@@ -106,15 +106,15 @@ audioPlayer.addEventListener('ended', nextAudio)
 let volumeMute = document.querySelector('#volume-mute');
 let volumeHight = document.querySelector('#volume-hight');
 
-volumeMute.addEventListener('click', () => {
-  volumeMute.style.display = 'none'
-  volumeHight.style.display = 'block'
+volumeHight.addEventListener('click', () => {
+  volumeHight.style.display = 'none'
+  volumeMute.style.display = 'block'
   audioPlayer.volume = 0
 })
 
-volumeHight.addEventListener('click', () => {
-  volumeMute.style.display = 'block'
-  volumeHight.style.display = 'none'
+volumeMute.addEventListener('click', () => {
+  volumeMute.style.display = 'none'
+  volumeHight.style.display = 'block'
   audioPlayer.volume = 1
 })
 
@@ -132,15 +132,34 @@ favoriteFilled.addEventListener('click', () => {
   favoriteFilled.style.display = 'none'
 })
 
-// Музыкальный блок (Рекомендации)
-let mainTag = document.querySelector("#music-block-references")
+// Музыкальный блок (Меню)
+let navMenu = document.querySelector('#navbar_menu');
+let navMenuClose = document.querySelector('#navbar_menu_close');
+let navMenuContent = document.querySelector('#navbar_menu_content');
+
+navMenu.addEventListener('click', () => {
+  navMenuClose.style.display = 'block';
+  navMenu.style.display = 'none';
+  navMenuContent.classList.add('music_navbar_menu_content_show')
+})
+
+navMenuClose.addEventListener('click', () => {
+  navMenu.style.display = 'block';
+  navMenuClose.style.display = 'none';
+  navMenuContent.classList.remove('music_navbar_menu_content_show')
+})
+
+// Музыкальный блок (Главная)
+const mainTag = document.querySelector("#music-content-main");
 
 for (let i = 0; i < musicList.length; i++) {
-  let sectionTag = `
-        <section class="music_block_audio" section-index="${i + 1}">
+  let sectionMainTag = `
+        <section class="music_block_audio" audio-index="${i + 1}">
           <div class="music_block_audio_one">
             <div class="music_block_cover">
-              <img src="img/covers/${musicList[i].img}.jpg" alt="" class="music_cover" id="cover_music">
+              <div class="music_cover">
+                <img src="img/covers/${musicList[i].img}.jpg" alt="" id="cover_music">
+              </div>
               <div class="music_block_waves" id="music_waves">
                 <span class="music_block_waves_stroke"></span>
                 <span class="music_block_waves_stroke"></span>
@@ -164,50 +183,82 @@ for (let i = 0; i < musicList.length; i++) {
           </div>
         </section>`
 
-  mainTag.insertAdjacentHTML('beforeend', sectionTag);
+  mainTag.insertAdjacentHTML('beforeend', sectionMainTag);
 
-  let sectionMusicDuration = mainTag.querySelector(`#${musicList[i].src}`);
-  let sectionMusicTag = mainTag.querySelector(`.${musicList[i].src}`);
+  let sectionMainMusicDuration = mainTag.querySelector(`#${musicList[i].src}`);
+  let sectionMainMusicTag = mainTag.querySelector(`.${musicList[i].src}`);
 
-  sectionMusicTag.addEventListener('loadeddata', () => {
-    let audioDuration = sectionMusicTag.duration;
+  sectionMainMusicTag.addEventListener('loadeddata', () => {
+    let audioDuration = sectionMainMusicTag.duration;
     let totalMin = Math.floor(audioDuration / 60);
     let totalSec = Math.floor(audioDuration % 60);
     if (totalSec < 10) {
       totalSec = `0${totalSec}`;
     };
-    sectionMusicDuration.innerHTML = `${totalMin}:${totalSec}`;
+    sectionMainMusicDuration.innerHTML = `${totalMin}:${totalSec}`;
   });
 };
 
-let allSectionTags = mainTag.querySelectorAll('section');
+let allSectionMainTags = mainTag.querySelectorAll('section');
 function playingNow() {
-  for (let j = 0; j < allSectionTags.length; j++) {
+  for (let j = 0; j < allSectionMainTags.length; j++) {
 
-    let musicWaves = allSectionTags[j].querySelector('#music_waves');
+    let musicWaves = allSectionMainTags[j].querySelector('#music_waves');
 
-    if(allSectionTags[j].classList.contains('music_playing')){
-      allSectionTags[j].classList.remove('music_playing');
+    if(allSectionMainTags[j].classList.contains('music_playing')){
+      allSectionMainTags[j].classList.remove('music_playing');
       musicWaves.style.display = 'none'
     };
 
-    if (allSectionTags[j].getAttribute('section-index') == musicIndex){
-      allSectionTags[j].classList.add('music_playing');
+    if (allSectionMainTags[j].getAttribute('audio-index') == musicIndex){
+      allSectionMainTags[j].classList.add('music_playing');
       musicWaves.style.display = 'flex'
     };
   
-    allSectionTags[j].setAttribute('onclick','clicked(this)');
+    allSectionMainTags[j].setAttribute('onclick','clickedAudio(this)');
   }
 }
 
-function clicked(element){
-  let getSectionIndex = element.getAttribute('section-index');
-  musicIndex = getSectionIndex;
+function clickedAudio(element){
+  let getSectionMainIndex = element.getAttribute('audio-index');
+  musicIndex = getSectionMainIndex;
   loadingSong(musicIndex)
   playAudio();    
   playingNow();
 };
 
+
+// Переходы между блоками
+let routerToMain = document.querySelector('#router_to_main');
+let routerToRadio = document.querySelector('#router_to_radio');
+let playerBlock = document.querySelector('#player_block');
+let playerRadioBlock = document.querySelector('#player_radio_block');
+
+routerToMain.addEventListener('click', () => {
+  mainTag.style.display = 'block'
+  radioTag.style.display = 'none'
+  playerBlock.style.display = 'block'
+  playerRadioBlock.style.display = 'none'
+  navMenuContent.classList.remove('music_navbar_menu_content_show')
+  navMenu.style.display = 'block';
+  navMenuClose.style.display = 'none';
+  pauseRadio();
+})
+
+routerToRadio.addEventListener('click', () => {
+  radioTag.style.display = 'block'
+  mainTag.style.display = 'none'
+  playerRadioBlock.style.display = 'block'
+  playerBlock.style.display = 'none'
+  navMenuContent.classList.remove('music_navbar_menu_content_show')
+  navMenu.style.display = 'block';
+  navMenuClose.style.display = 'none';
+  pauseAudio();
+})
+
+
+
+ 
 
 
 
