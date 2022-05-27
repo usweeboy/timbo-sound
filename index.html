@@ -45,7 +45,7 @@
         <img src="img/icons/heart-filled.svg" alt="" class="favorite_filled" id="favorite-filled">
       </div>
     </footer>
-    <audio src="audio/GlassAnimalsHeatWavesfeatIanndior.mp3" id="audio_player"></audio>
+    <audio preload="none" src="audio/GlassAnimalsHeatWavesfeatIanndior.mp3" id="audio_player"></audio>
   </div>
 
   <div class="player_radio" id="player_radio_block">
@@ -55,6 +55,7 @@
     </nav>
     <main class="player_radio_content">
       <img src="img/covers/novoeradio.jpg" alt="" class="player_radio_cover" id="cover_radio">
+      <div class="player_radio_station">Радиостанция</div>
       <div class="player_radio_title" id="player_radio_title">Новое Радио</div>
     </main>
     <footer class="player_radio_footer">
@@ -73,7 +74,7 @@
         <img src="img/icons/heart-filled.svg" alt="" class="favorite_filled" id="favorite-filled">
       </div>
     </footer>
-    <audio src="https://icecast-newradio.cdnvideo.ru/newradio3" id="radio_player"></audio>
+    <audio preload="none" src="https://icecast-newradio.cdnvideo.ru/newradio3" id="radio_player"></audio>
   </div>
 
   <div class="music">
@@ -91,11 +92,19 @@
       <ul class="music_navbar_list">
         <li class="music_navbar_item_active" id="router_to_main">Главная</li>
         <li>Избранное</li>
-        <li id="router_to_radio">Радио</li>
+        <li id="router_to_radio">Онлайн радио</li>
       </ul>
     </div>
-    <div class="music_content_main" id="music-content-main"></div>
-    <div class="music_content_radio" id="music-content-radio"></div>
+    <div class="music_content_main" id="music-content-main">
+      <div class="music_content_main_title">
+        <h2>Главная</h2>
+      </div>
+    </div>
+    <div class="music_content_radio" id="music-content-radio">
+      <div class="music_content_radio_title">
+        <h2>Онлайн радио</h2>
+      </div>
+    </div>
   </div>
 
 </div>

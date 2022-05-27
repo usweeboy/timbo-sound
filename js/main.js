@@ -175,7 +175,7 @@ for (let i = 0; i < musicList.length; i++) {
               <div class="musical_block_artist">${musicList[i].artist}</div>
             </div>
           </div>
-          <audio src="audio/${musicList[i].src}.mp3" class="${musicList[i].src}"></audio>
+          <audio preload="none" src="audio/${musicList[i].src}.mp3" class="${musicList[i].src}"></audio>
           <div class="music_block_audio_two">
             <div class="music_block_audio_duration">
               <p id="${musicList[i].src}">3:20</p>

@@ -27,7 +27,20 @@ pauseRadioBtn.addEventListener('click', pauseRadio);
 nextRadioBtn.addEventListener('click', nextRadio);
 prevRadioBtn.addEventListener('click', prevRadio);
 
+let isRadioPlaying = false;
+
+radioPlayer.onplaying = () => {
+  isRadioPlaying = true;
+};
+
+radioPlayer.onpause = () => {
+  isRadioPlaying = false;
+};
+
 function playRadio() {
+  radioPlayer.muted = true;
+  radioPlayer.play();
+  radioPlayer.muted = false;
   radioPlayer.play()
   playRadioBtn.style.display = 'none'
   pauseRadioBtn.style.display = 'block'
@@ -36,6 +49,9 @@ function playRadio() {
 }
 
 function pauseRadio() {
+  radioPlayer.muted = true;
+  radioPlayer.pause();
+  radioPlayer.muted = false;
   radioPlayer.pause()
   playRadioBtn.style.display = 'block'
   pauseRadioBtn.style.display = 'none'
@@ -101,7 +117,7 @@ for (let k = 0; k < radioList.length; k++) {
               <div class="radio_block_info_playing" id="radio_playing">Сейчас играет</div>
             </div>
           </div>
-          <audio src="${radioList[k].src}" id="${radioList[k].indexSrc}"</audio>
+          <audio preload="none" src="${radioList[k].src}" id="${radioList[k].indexSrc}"</audio>
         </section>`
 
   radioTag.insertAdjacentHTML('beforeend', sectionRadioTag);
