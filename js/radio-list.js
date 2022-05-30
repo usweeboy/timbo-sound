@@ -10,6 +10,11 @@ let radioList = [
     src: "https://online-3.gkvr.ru:8001/muztvradio_original_128.mp3"
   },
   {
+    name: "Хит FM",
+    img: "xitfm",
+    src: "https://hitfm.hostingradio.ru/hitfm96.aacp"
+  },
+  {
     name: "Русское радио",
     img: "russkoeradio",
     src: "https://rusradio.hostingradio.ru/rusradio96.aacp"
@@ -28,6 +33,11 @@ let radioList = [
     name: 'Радио Energy',
     img: "radioenergy",
     src: "https://pub0202.101.ru:8443/stream/air/aac/64/99"
+  },
+  {
+    name: 'LoFi World',
+    img: "lofiworld",
+    src: "https://stream.zeno.fm/7w72va6s7k0uv"
   },
   {
     name: 'TНT Music Radio',

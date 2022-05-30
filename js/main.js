@@ -175,7 +175,7 @@ for (let i = 0; i < musicList.length; i++) {
               <div class="musical_block_artist">${musicList[i].artist}</div>
             </div>
           </div>
-          <audio preload="none" src="audio/${musicList[i].src}.mp3" class="${musicList[i].src}"></audio>
+          <audio src="audio/${musicList[i].src}.mp3" class="${musicList[i].src}"></audio>
           <div class="music_block_audio_two">
             <div class="music_block_audio_duration">
               <p id="${musicList[i].src}">3:20</p>
@@ -255,6 +255,39 @@ routerToRadio.addEventListener('click', () => {
   navMenuClose.style.display = 'none';
   pauseAudio();
 })
+
+// Поиск по музыке и радио.
+document.querySelector('#input_search_music').oninput = function() {
+  let val = this.value.trim();
+  let musicItems = document.querySelectorAll('#music-content-main section');
+  let radioItems = document.querySelectorAll('#music-content-radio section');
+  if (val != ''){
+    musicItems.forEach(function(elem){
+      if (elem.innerText.search(RegExp(val,"gi")) == -1){
+        elem.style.display = 'none';
+      }
+      else {
+        elem.style.display = 'flex';
+      }
+    });
+    radioItems.forEach(function(elem){
+      if (elem.innerText.search(RegExp(val,"gi")) == -1){
+        elem.style.display = 'none';
+      }
+      else {
+        elem.style.display = 'flex';
+      }
+    });
+  }
+  else {
+    musicItems.forEach(function(elem){
+      elem.style.display = 'flex';
+    });
+    radioItems.forEach(function(elem){
+      elem.style.display = 'flex';
+    });
+  }
+}
 
 
 

@@ -64,6 +64,10 @@ body{
   }
 }
 
+.hide_audio{
+  display: none;
+}
+
 .music_playing{
   background-color: rgba(210, 210, 210, 0.741);
   .music_block_cover{
