@@ -6,10 +6,22 @@ let musicList = [
     src: "GlassAnimalsHeatWavesfeatIanndior"
   },
   {
+    name: "Way Down We Go",
+    artist: "Kaleo",
+    img: "kaleowaydownwego",
+    src: "KaleoWayDownWeGo"
+  },
+  {
     name: "Фая",
     artist: "Xcho, Alemond, Neki",
     img: "xchoalemondnekifaya",
     src: "XchoAlemondNekiФая",
+  },
+  {
+    name: "MUTANT",
+    artist: "OBLADAET",
+    img: "obladaetmutant",
+    src: "ObladaetMutant"
   },
   {
     name: "Не твой",

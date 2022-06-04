@@ -1,25 +1,60 @@
-@media (min-width: 320px) and (max-width: 460px){
+@media (min-width: 0px) and (max-width: 800px){
   .wrapper{
-    .player,.player_radio{
-      margin-top: 10px;
-    }
-    .music{
-      margin-top: 30px;
-      margin-left: 0px;
-      max-height: 400px;
-      .music_content_main{
-        .music_block_audio{
-          .music_block_audio_one{
-            .music_block_audio_info{
-              width: 100%;
+    .main{
+      .navbar{
+        .navbar_search{
+          width: 210px;
+        }
+      }
+      .player_music{
+        .player_music_row{
+          padding: 10px 10px;
+          justify-content: center;
+          .player_music_info{
+            .player_music_block{
+              .player_music_block_info{
+                .player_music_duration{
+                  margin-left: 15px;
+                }
+              }
+              .player_music_progress_container{
+                margin-top: 2px;
+                margin-bottom: 0px;
+              }
+            }
+          }
+          .player_music_controls{
+            margin-top: 15px;
+            width: 100%;
+            justify-content: space-between;
+            .player_music_volume,.player_music_btns,.player_music_add{
+              .music_mute,.music_hight{
+                width: 28px;
+              }
+              .play_audio,.pause_audio,.add_btn,.delete_btn{
+                width: 32px;
+              }
+              .play_audio,.prev_audio,.pause_audio{
+                margin-right: 8px;
+              }
+            }
+            .player_music_btns,.player_music_volume{
+              margin-right: 0px;
             }
           }
         }
-        .music_block_audio:hover{
-          .music_block_audio_one{
-            .music_block_cover{
-              .music_block_btns{
-                .music_block_play_audio{
+      }
+      .content_main{
+        padding: 0px 5px 10px 5px;
+        .audio_row{
+          width: 100%;
+          margin-left: 0px;
+        }
+        .audio_row:hover{
+          .audio_row_content_one{
+            .audio_row_cover{
+              .audio_row_btns{
+                .audio_row_play{
                   display: none;
                 }
               }
@@ -27,11 +62,16 @@
           }
         }
       }
-      .music_content_radio{
-        .radio_block:hover{
-          .radio_block_cover{
-            .radio_block_btns{
-              .radio_block_play{
+      .content_radio{
+        padding: 0px 5px 10px 5px;
+        .radio_row{
+          width: 100%;
+          margin-left: 0px;
+        }
+        .radio_row:hover{
+          .radio_row_cover{
+            .radio_row_btns{
+              .radio_row_play{
                 display: none;
               }
             }
@@ -42,35 +82,16 @@
   }
 }
 
-@media (min-width: 461px) and (max-width: 785px){
+@media (min-width: 0px) and (max-width: 390px){
   .wrapper{
-    .player{
-      margin-top: 10px;
-    }
-    .music{
-      margin-top: 30px;
-      margin-left: 0px;
-      .music_content_main{
-        .music_block_audio:hover{
-          .music_block_audio_one{
-            .music_block_cover{
-              .music_block_btns{
-                .music_block_play_audio{
-                  display: none;
-                }
-              }
-            }
-          }
-        }
-      }
-      .music_content_radio{
-        .radio_block:hover{
-          .radio_block_cover{
-            .radio_block_btns{
-              .radio_block_play{
-                display: none;
-              }
-            }
+    .main{
+      .player_radio{
+        .player_radio_row{
+          padding: 10px 10px;
+          .player_radio_controls{
+            width: 100%;
+            justify-content: space-between;
+            margin-top: 14px;
           }
         }
       }
@@ -78,21 +99,21 @@
   }
 }
 
-@media (min-width: 786px) and (max-width: 800px){
+@media (min-width: 801px) and (max-width: 980px){
   .wrapper{
-    .player{
-      margin-top: 10px;
-    }
-    .music{
-      margin-top: 30px;
-    }
-  }
-}
-
-@media (min-width: 900px) and (max-width: 2560px){
-  .wrapper{
-    .music{
-      margin-left: 30px;
+    .main{
+      .player_music{
+        .player_music_row{
+          .player_music_info{
+            max-width: 550px;
+          }
+        }
+      }
+      .content_radio{
+        .radio_row{
+          width: 46%;
+        }
+      }
     }
   }
 }

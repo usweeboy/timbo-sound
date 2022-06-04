@@ -7,106 +7,121 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/reset-style.css">
   <link rel="stylesheet" href="css/media-style.css">
-  <title>Музыкальный плеер</title>
+  <title>TIMBO Sound</title>
 </head>
 <body>
+
 <div class="wrapper">
-
-  <div class="player" id="player_block">
-    <nav class="player_navbar">
-      <div>Сейчас играет</div>
-      <img src="img/icons/musical-notes.svg" alt="" width="20">
-    </nav>
-    <main class="player_content">
-      <img src="img/covers/heatwavesglassanimals.jpg" alt="" class="player_cover" id="cover_music">
-      <div class="player_title" id="player_title">Heat Waves</div>
-      <div class="player_artist" id="player_artist">Glass Animals (feat. iann dior)</div>
-      <div class="player_progress_container" id="progress_container">
-        <div class="player_progress_bar" id="progress_bar"></div>
-      </div>
-      <div class="player_progress_duration">
-        <p id="current_time">00:00</p>
-        <p id="duration_time">3:20</p>
-      </div>
-    </main>
-    <footer class="player_footer">
-      <div class="player_volume">
-        <img src="img/icons/volume-mute.svg" alt="" class="volume_mute" id="volume-mute">
-        <img src="img/icons/volume-high.svg" alt="" class="volume_hight" id="volume-hight">
-      </div>
-      <div class="player_controls">
-        <img src="img/icons/prev.svg" alt="" id="prev_btn" class="prev_audio">
-        <img src="img/icons/play.svg" alt="" id="play_btn" class="play_audio">
-        <img src="img/icons/pause.svg" alt="" id="pause_btn" class="pause_audio">
-        <img src="img/icons/next.svg" alt="" id="next_btn" class="next_audio">
-      </div>
-      <div class="player_favorite">
-        <img src="img/icons/heart-outline.svg" alt="" class="favorite_btn" id="favorite">
-        <img src="img/icons/heart-filled.svg" alt="" class="favorite_filled" id="favorite-filled">
-      </div>
-    </footer>
-    <audio preload="none" src="audio/GlassAnimalsHeatWavesfeatIanndior.mp3" id="audio_player"></audio>
-  </div>
-
-  <div class="player_radio" id="player_radio_block">
-    <nav class="player_radio_navbar">
-      <div>Сейчас играет</div>
-      <img src="img/icons/musical-notes.svg" alt="" width="20">
-    </nav>
-    <main class="player_radio_content">
-      <img src="img/covers/novoeradio.jpg" alt="" class="player_radio_cover" id="cover_radio">
-      <div class="player_radio_station">Радиостанция</div>
-      <div class="player_radio_title" id="player_radio_title">Новое Радио</div>
-    </main>
-    <footer class="player_radio_footer">
-      <div class="player_radio_volume">
-        <img src="img/icons/volume-mute.svg" alt="" class="volume_mute" id="radio-mute">
-        <img src="img/icons/volume-high.svg" alt="" class="volume_hight" id="radio-hight">
-      </div>
-      <div class="player_radio_controls">
-        <img src="img/icons/prev.svg" alt="" id="prev_radio_btn" class="prev_radio">
-        <img src="img/icons/play.svg" alt="" id="play_radio_btn" class="play_radio">
-        <img src="img/icons/pause.svg" alt="" id="pause_radio_btn" class="pause_radio">
-        <img src="img/icons/next.svg" alt="" id="next_radio_btn" class="next_radio">
-      </div>
-      <div class="player_radio_favorite">
-        <img src="img/icons/heart-outline.svg" alt="" class="favorite_btn" id="favorite">
-        <img src="img/icons/heart-filled.svg" alt="" class="favorite_filled" id="favorite-filled">
-      </div>
-    </footer>
-    <audio preload="none" src="https://icecast-newradio.cdnvideo.ru/newradio3" id="radio_player"></audio>
-  </div>
-
-  <div class="music">
-    <nav class="music_navbar">
-      <form class="music_navbar_search">
+  <main class="main" id="main">
+    <nav class="navbar">
+      <form class="navbar_search">
         <img src="img/icons/search.svg" alt="">
         <input type="search" name="" id="input_search_music" class="input_search_music" placeholder="Поиск">
       </form>
-      <div class="music_navbar_menu">
+      <div class="navbar_menu">
         <img src="img/icons/burger-menu.svg" alt="" id="navbar_menu">
         <img src="img/icons/close.svg" alt="" id="navbar_menu_close">
       </div>
     </nav>
-    <div class="music_navbar_menu_content" id="navbar_menu_content">
-      <ul class="music_navbar_list">
-        <li class="music_navbar_item_active" id="router_to_main">Главная</li>
-        <li>Избранное</li>
-        <li id="router_to_radio">Онлайн радио</li>
+    <div class="navbar_menu_content" id="navbar_menu_content">
+      <ul class="navbar_list">
+        <li id="router_to_main">
+          <img src="img/icons/home-outline.svg" alt="">
+          <p>Главная</p>
+        </li>
+        <li id="router_to_favorite">
+          <img src="img/icons/bookmarks-outline.svg" alt="">
+          <p>Моя музыка</p>
+        </li>
+        <li id="router_to_radio">
+          <img src="img/icons/radio-outline.svg" alt="">
+          <p>Онлайн радио</p>
+        </li>
       </ul>
     </div>
-    <div class="music_content_main" id="music-content-main">
-      <div class="music_content_main_title">
-        <h2>Главная</h2>
+    <div class="player_music" id="player_music">
+      <h2>Сейчас играет</h2>
+      <div class="player_music_row">
+        <div class="player_music_info">
+          <div class="player_music_cover">
+            <img src="img/covers/heatwavesglassanimals.jpg" alt="" id="cover_music">
+          </div>
+          <div class="player_music_block">
+            <div class="player_music_block_info">
+              <div>
+                <div class="player_music_title" id="player_music_title">Heat Waves</div>
+                <div class="player_music_artist" id="player_music_artist">Glass Animals (feat. iann dior)</div>
+              </div>
+              <div class="player_music_duration">
+                <p id="current_time">00:20</p>
+              </div>
+            </div>
+            <div class="player_music_progress_container" id="progress_music_container">
+              <div class="player_music_progress_bar" id="progress_music_bar"></div>
+            </div>
+          </div>
+        </div>
+        <div class="player_music_controls">
+          <div class="player_music_volume">
+            <img src="img/icons/volume-high.svg" alt="" class="music_hight" id="music_hight">
+            <img src="img/icons/volume-mute.svg" alt="" class="music_mute" id="music_mute">
+          </div>
+          <div class="player_music_btns">
+            <img src="img/icons/prev.svg" alt="" id="prev_btn" class="prev_audio">
+            <img src="img/icons/play.svg" alt="" id="play_btn" class="play_audio">
+            <img src="img/icons/pause.svg" alt="" id="pause_btn" class="pause_audio">
+            <img src="img/icons/next.svg" alt="" id="next_btn" class="next_audio">
+          </div>
+          <div class="player_music_add">
+            <img src="img/icons/add-outline.svg" alt="" class="add_btn" id="add_btn">
+            <img src="img/icons/close.svg" alt="" class="delete_btn" id="delete_btn">
+          </div>
+        </div>
+        <audio preload="none" src="audio/GlassAnimalsHeatWavesfeatIanndior.mp3" id="audio_player"></audio>
       </div>
     </div>
-    <div class="music_content_radio" id="music-content-radio">
-      <div class="music_content_radio_title">
-        <h2>Онлайн радио</h2>
+    <div class="player_radio" id="player_radio">
+      <h2>Сейчас играет</h2>
+      <div class="player_radio_row">
+        <div class="player_radio_info">
+          <div class="player_radio_cover">
+            <img src="img/covers/heatwavesglassanimals.jpg" alt="" id="cover_radio">
+          </div>
+          <div class="player_radio_title" id="player_radio_title">Новое радио</div>
+        </div>
+        <div class="player_radio_controls">
+          <div class="player_radio_volume">
+            <img src="img/icons/volume-high.svg" alt="" class="radio_hight" id="radio_hight">
+            <img src="img/icons/volume-mute.svg" alt="" class="radio_mute" id="radio_mute">
+          </div>
+          <div class="player_radio_btns">
+            <img src="img/icons/prev.svg" alt="" id="prev_radio_btn" class="prev_radio">
+            <img src="img/icons/play.svg" alt="" id="play_radio_btn" class="play_radio">
+            <img src="img/icons/pause.svg" alt="" id="pause_radio_btn" class="pause_radio">
+            <img src="img/icons/next.svg" alt="" id="next_radio_btn" class="next_radio">
+          </div>
+          <div class="player_radio_add">
+            <img src="img/icons/add-outline.svg" alt="" class="add_radio_btn" id="add_radio_btn">
+            <img src="img/icons/close.svg" alt="" class="delete_radio_btn" id="delete_radio_btn">
+          </div>
+        </div>
+        <audio preload="none" src="audio/GlassAnimalsHeatWavesfeatIanndior.mp3" id="radio_player"></audio>
       </div>
     </div>
-  </div>
-
+    <div class="content_main_title" id="content_main_title">
+      <h2>Главная</h2>
+    </div>
+    <div class="content_main" id="content_main"></div>
+    <!-- <div class="content_favorite" id="content-favorite">
+      <div class="content_favorite_title">
+        <h2>Избранное</h2>
+      </div>
+    </div> -->
+    <div class="content_radio_title" id="content_radio_title">
+      <h2>Онлайн радио</h2>
+    </div>
+    <div class="content_radio" id="content_radio"></div>
+  </main>
 </div>
 
 <script src="js/radio-list.js"></script>

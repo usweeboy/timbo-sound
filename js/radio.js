@@ -38,24 +38,16 @@ radioPlayer.onpause = () => {
 };
 
 function playRadio() {
-  radioPlayer.muted = true;
-  radioPlayer.play();
-  radioPlayer.muted = false;
   radioPlayer.play()
   playRadioBtn.style.display = 'none'
   pauseRadioBtn.style.display = 'block'
-  coverRadio.className = 'player_radio_cover_rotation'
   playingRadioNow();
 }
 
 function pauseRadio() {
-  radioPlayer.muted = true;
-  radioPlayer.pause();
-  radioPlayer.muted = false;
   radioPlayer.pause()
   playRadioBtn.style.display = 'block'
   pauseRadioBtn.style.display = 'none'
-  coverRadio.className = 'player_radio_cover'
   playingRadioNow();
 }
 
@@ -76,8 +68,8 @@ function prevRadio() {
 }
 
 // Изменение громкости
-let radioMute = document.querySelector('#radio-mute');
-let radioHight = document.querySelector('#radio-hight');
+let radioMute = document.querySelector('#radio_mute');
+let radioHight = document.querySelector('#radio_hight');
 
 radioHight.addEventListener('click', () => {
   radioHight.style.display = 'none'
@@ -92,29 +84,28 @@ radioMute.addEventListener('click', () => {
 })
 
 // Музыкальный блок (Радио)
-const radioTag = document.querySelector('#music-content-radio');
+const radioTag = document.querySelector('#content_radio');
 
 for (let k = 0; k < radioList.length; k++) {
   let sectionRadioTag = `
-        <section class="radio_block" radio-index="${k + 1}">
+        <section class="radio_row" radio-index="${k + 1}">
           <div class="radio_content">
-            <div class="radio_block_cover">
+            <div class="radio_row_cover">
               <div class="radio_cover">
                 <img src="img/covers/${radioList[k].img}.jpg" alt="" id="radio_music">
               </div>
-              <div class="radio_block_waves" id="radio_waves">
-                <span class="radio_block_waves_stroke"></span>
-                <span class="radio_block_waves_stroke"></span>
-                <span class="radio_block_waves_stroke"></span>
+              <div class="radio_row_waves" id="radio_waves">
+                <span class="radio_row_waves_stroke"></span>
+                <span class="radio_row_waves_stroke"></span>
+                <span class="radio_row_waves_stroke"></span>
               </div>
-              <div class="radio_block_btns">
-                <img src="img/icons/play.svg" alt="" id="radio_block_play_btn" class="radio_block_play">
-                <img src="img/icons/pause.svg" alt="" id="radio_block_pause_btn" class="radio_block_pause">
+              <div class="radio_row_btns">
+                <img src="img/icons/play.svg" alt="" id="radio_row_play_btn" class="radio_row_play">
+                <img src="img/icons/pause.svg" alt="" id="radio_row_pause_btn" class="radio_row_pause">
               </div>
             </div>
-            <div class="radio_block_info">
-              <div class="radio_block_title">${radioList[k].name}</div>
-              <div class="radio_block_info_playing" id="radio_playing">Сейчас играет</div>
+            <div class="radio_row_info">
+              <div class="radio_row_title">${radioList[k].name}</div>
             </div>
           </div>
           <audio preload="none" src="${radioList[k].src}" id="${radioList[k].indexSrc}"</audio>
@@ -128,18 +119,15 @@ function playingRadioNow() {
   for (let l = 0; l < allSectionRadioTags.length; l++) {
 
     let radioWaves = allSectionRadioTags[l].querySelector('#radio_waves');
-    let radioPlaying = allSectionRadioTags[l].querySelector('#radio_playing');
 
     if(allSectionRadioTags[l].classList.contains('music_playing')){
       allSectionRadioTags[l].classList.remove('music_playing');
       radioWaves.style.display = 'none'
-      radioPlaying.style.display = 'none'
     };
 
     if (allSectionRadioTags[l].getAttribute('radio-index') == radioIndex){
       allSectionRadioTags[l].classList.add('music_playing');
       radioWaves.style.display = 'flex'
-      radioPlaying.style.display = 'block'
     };
   
     allSectionRadioTags[l].setAttribute('onclick','clickedRadio(this)');

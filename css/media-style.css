@@ -1,47 +1,77 @@
-@media (min-width: 320px) and (max-width: 460px) {
-  .wrapper .player, .wrapper .player_radio {
-    margin-top: 10px;
+@media (min-width: 0px) and (max-width: 800px) {
+  .wrapper .main .navbar .navbar_search {
+    width: 210px;
   }
-  .wrapper .music {
-    margin-top: 30px;
-    margin-left: 0px;
-    max-height: 400px;
+  .wrapper .main .player_music .player_music_row {
+    padding: 10px 10px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
-  .wrapper .music .music_content_main .music_block_audio .music_block_audio_one .music_block_audio_info {
+  .wrapper .main .player_music .player_music_row .player_music_info .player_music_block .player_music_block_info .player_music_duration {
+    margin-left: 15px;
+  }
+  .wrapper .main .player_music .player_music_row .player_music_info .player_music_block .player_music_progress_container {
+    margin-top: 2px;
+    margin-bottom: 0px;
+  }
+  .wrapper .main .player_music .player_music_row .player_music_controls {
+    margin-top: 15px;
     width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
-  .wrapper .music .music_content_main .music_block_audio:hover .music_block_audio_one .music_block_cover .music_block_btns .music_block_play_audio {
-    display: none;
+  .wrapper .main .player_music .player_music_row .player_music_controls .player_music_volume .music_mute, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_volume .music_hight, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_btns .music_mute, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_btns .music_hight, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_add .music_mute, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_add .music_hight {
+    width: 28px;
   }
-  .wrapper .music .music_content_radio .radio_block:hover .radio_block_cover .radio_block_btns .radio_block_play {
-    display: none;
+  .wrapper .main .player_music .player_music_row .player_music_controls .player_music_volume .play_audio, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_volume .pause_audio, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_volume .add_btn, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_volume .delete_btn, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_btns .play_audio, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_btns .pause_audio, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_btns .add_btn, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_btns .delete_btn, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_add .play_audio, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_add .pause_audio, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_add .add_btn, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_add .delete_btn {
+    width: 32px;
   }
-}
-@media (min-width: 461px) and (max-width: 785px) {
-  .wrapper .player {
-    margin-top: 10px;
+  .wrapper .main .player_music .player_music_row .player_music_controls .player_music_volume .play_audio, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_volume .prev_audio, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_volume .pause_audio, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_btns .play_audio, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_btns .prev_audio, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_btns .pause_audio, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_add .play_audio, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_add .prev_audio, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_add .pause_audio {
+    margin-right: 8px;
   }
-  .wrapper .music {
-    margin-top: 30px;
+  .wrapper .main .player_music .player_music_row .player_music_controls .player_music_btns, .wrapper .main .player_music .player_music_row .player_music_controls .player_music_volume {
+    margin-right: 0px;
+  }
+  .wrapper .main .content_main {
+    padding: 0px 5px 10px 5px;
+  }
+  .wrapper .main .content_main .audio_row {
+    width: 100%;
     margin-left: 0px;
   }
-  .wrapper .music .music_content_main .music_block_audio:hover .music_block_audio_one .music_block_cover .music_block_btns .music_block_play_audio {
+  .wrapper .main .content_main .audio_row:hover .audio_row_content_one .audio_row_cover .audio_row_btns .audio_row_play {
     display: none;
   }
-  .wrapper .music .music_content_radio .radio_block:hover .radio_block_cover .radio_block_btns .radio_block_play {
+  .wrapper .main .content_radio {
+    padding: 0px 5px 10px 5px;
+  }
+  .wrapper .main .content_radio .radio_row {
+    width: 100%;
+    margin-left: 0px;
+  }
+  .wrapper .main .content_radio .radio_row:hover .radio_row_cover .radio_row_btns .radio_row_play {
     display: none;
   }
 }
-@media (min-width: 786px) and (max-width: 800px) {
-  .wrapper .player {
-    margin-top: 10px;
+@media (min-width: 0px) and (max-width: 390px) {
+  .wrapper .main .player_radio .player_radio_row {
+    padding: 10px 10px;
   }
-  .wrapper .music {
-    margin-top: 30px;
+  .wrapper .main .player_radio .player_radio_row .player_radio_controls {
+    width: 100%;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 14px;
   }
 }
-@media (min-width: 900px) and (max-width: 2560px) {
-  .wrapper .music {
-    margin-left: 30px;
+@media (min-width: 801px) and (max-width: 980px) {
+  .wrapper .main .player_music .player_music_row .player_music_info {
+    max-width: 550px;
+  }
+  .wrapper .main .content_radio .radio_row {
+    width: 46%;
   }
 }
