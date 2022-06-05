@@ -89,7 +89,7 @@
     .main{
       border-radius: 0px;
       .navbar{
-        width: 94%;
+        width: 93%;
       }
     }
   }
@@ -116,6 +116,28 @@
             width: 100%;
             justify-content: space-between;
             margin-top: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 260px) and (max-width: 450px){
+  .wrapper{
+    .main{
+      .navbar{
+        .navbar_search{
+          display: none;
+        }
+        .navbar_menu_content{
+          width: 300px;
+          .navbar_menu_content_block{
+            display: flex;
+            justify-content: center;
+            .navbar_content_search{
+              display: flex;
+            }
           }
         }
       }

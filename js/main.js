@@ -232,6 +232,38 @@ document.querySelector('#input_search_music').oninput = function() {
   }
 }
 
+document.querySelector('#input_content_search_music').oninput = function() {
+  let val = this.value.trim();
+  let musicItems = document.querySelectorAll('#content_main section');
+  let radioItems = document.querySelectorAll('#content_radio section');
+  if (val != ''){
+    musicItems.forEach(function(elem){
+      if (elem.innerText.search(RegExp(val,"gi")) == -1){
+        elem.style.display = 'none';
+      }
+      else {
+        elem.style.display = 'flex';
+      }
+    });
+    radioItems.forEach(function(elem){
+      if (elem.innerText.search(RegExp(val,"gi")) == -1){
+        elem.style.display = 'none';
+      }
+      else {
+        elem.style.display = 'flex';
+      }
+    });
+  }
+  else {
+    musicItems.forEach(function(elem){
+      elem.style.display = 'flex';
+    });
+    radioItems.forEach(function(elem){
+      elem.style.display = 'flex';
+    });
+  }
+}
+
 // let favoriteTag = document.querySelector('#music-content-favorite');
 
 // Меню
