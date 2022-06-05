@@ -135,18 +135,29 @@ body{
     width: 1024px;
     height: 100vh;
     overflow-y: auto;
+    position: relative;
     .navbar{
       background-color: white;
       padding: 15px 20px 15px 20px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.405);
+      border-radius: 20px 20px 0px 0px;
+      border-bottom: 1px solid rgba(42, 42, 42, 0.438);
       @extend %flex_items_center;
       justify-content: space-between;
-      position: relative;
+      position: fixed;
+      max-width: 984px;
+      width: 100%;
       z-index: 1;
+      .navbar_logo{
+        @extend %flex_items_center;
+        .navbar_menu_logo{
+          width: 70px;
+        }
+      }
       .navbar_search{
-        border: 1px solid rgba(0, 0, 0, 0.532);
+        margin-left: 20px;
+        border: 1px solid rgba(42, 42, 42, 0.712);
         display: flex;
-        border-radius: 20px;
+        border-radius: 10px;
         width: 300px;
         padding: 5px;
         & img{
@@ -162,48 +173,60 @@ body{
         }
       }
       .navbar_menu{
-        & img{
+        @extend %flex_items_center;
+        .navbar_menu_logo{
+          
+          margin-right: 20px;
+        }
+        #navbar_menu{
           width: 32px;
           cursor: pointer;
         }
-        #navbar_menu_close{
-          display: none;
-        }
       }
-    }
-    .navbar_menu_content{
-      display: none;
-      position: absolute;
-      background-color: white;
-      right: 0;
-      -webkit-box-shadow: -9px 9px 8px 0px rgba(34, 60, 80, 0.2);
-      -moz-box-shadow: -9px 9px 8px 0px rgba(34, 60, 80, 0.2);
-      box-shadow: -9px 9px 8px 0px rgba(34, 60, 80, 0.2);
-      width: 200px;
-      height: 180px;
-      border-radius: 0px 0px 0px 20px;
-      .navbar_list{
-        margin-left: -15px;
-        & li{
-          & img{
-            margin-right: 10px;
-            width: 25px;
+      .navbar_menu_content{
+        display: none;
+        position: absolute;
+        background-color: white;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        -webkit-box-shadow: -9px 9px 8px 0px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: -9px 9px 8px 0px rgba(34, 60, 80, 0.2);
+        box-shadow: -9px 9px 8px 0px rgba(34, 60, 80, 0.2);
+        width: 200px;
+        height: 230px;
+        border-radius: 0px 20px 0px 20px;
+        .navbar_menu_content_close{
+          display: flex;
+          justify-content: end;
+          padding: 15px 20px 0px 15px;
+          #navbar_menu_close{
+            width: 32px;
+            cursor: pointer;
           }
-          @extend %flex_items_center;
-          color: black;
-          font-size: 15px;
-          cursor: pointer;
-          margin-top: 5px;
-          list-style: none;
+        }
+        .navbar_list{
+          margin-left: -15px;
+          & li{
+            & img{
+              margin-right: 10px;
+              width: 25px;
+            }
+            @extend %flex_items_center;
+            color: black;
+            font-size: 15px;
+            cursor: pointer;
+            list-style: none;
+          }
         }
       }
-    }
-    .navbar_menu_content_show{
-      display: block;
+      .navbar_menu_content_show{
+        display: block;
+      }
     }
     .player_music,.player_radio{
-      padding: 0px 10px 15px 10px;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.405);
+      padding: 70px 10px 15px 10px;
+      border-bottom: 1px solid rgba(42, 42, 42, 0.438);
       & h2{
         margin-top: 15px;
         font-size: 17px;
@@ -296,7 +319,7 @@ body{
               display: none;
             }
             .play_audio,.play_radio,.pause_audio,.pause_radio{
-              width: 28px;
+              width: 30px;
             }
             .music_mute,.music_hight,.radio_mute,.radio_hight{
               width: 26px;
@@ -413,24 +436,22 @@ body{
       }
       .audio_row:hover{
         background-color: rgba(210, 210, 210, 0.741);
-        .audio_row_content_one{
-          .audio_row_cover{
-            .audio_cover::before {
-              border-radius: 10px;
-              content: '';
-              position: absolute;
-              top: 0;
-              left: 0;
-              right: 0;
-              bottom: 0;
-              margin-bottom: 3.5px;
-              background-color: rgba(0, 0, 0, 0.4);  
-              z-index: 0;
-            }
-            .audio_row_btns{
-              .audio_row_play{
-                display: block;
-              }
+        .audio_row_cover{
+          .audio_cover::before {
+            border-radius: 10px;
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin-bottom: 3.5px;
+            background-color: rgba(0, 0, 0, 0.4);  
+            z-index: 0;
+          }
+          .audio_row_btns{
+            .audio_row_play{
+              display: block;
             }
           }
         }

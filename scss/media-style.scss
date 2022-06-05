@@ -2,8 +2,10 @@
   .wrapper{
     .main{
       .navbar{
-        .navbar_search{
-          width: 210px;
+        .navbar_logo{
+          .navbar_search{
+            width: 210px;
+          }
         }
       }
       .player_music{
@@ -82,9 +84,31 @@
   }
 }
 
+@media (min-width: 0px) and (max-width: 1043px){
+  .wrapper{
+    .main{
+      border-radius: 0px;
+      .navbar{
+        width: 94%;
+      }
+    }
+  }
+}
+
 @media (min-width: 0px) and (max-width: 390px){
   .wrapper{
     .main{
+      .navbar{
+        .navbar_logo{
+          .navbar_menu_logo{
+            width: 60px;
+          }
+          .navbar_search{
+            margin-left: 12px;
+            width: 160px;
+          }
+        }
+      }
       .player_radio{
         .player_radio_row{
           padding: 10px 10px;

@@ -1,5 +1,5 @@
 @media (min-width: 0px) and (max-width: 800px) {
-  .wrapper .main .navbar .navbar_search {
+  .wrapper .main .navbar .navbar_logo .navbar_search {
     width: 210px;
   }
   .wrapper .main .player_music .player_music_row {
@@ -55,7 +55,22 @@
     display: none;
   }
 }
+@media (min-width: 0px) and (max-width: 1043px) {
+  .wrapper .main {
+    border-radius: 0px;
+  }
+  .wrapper .main .navbar {
+    width: 94%;
+  }
+}
 @media (min-width: 0px) and (max-width: 390px) {
+  .wrapper .main .navbar .navbar_logo .navbar_menu_logo {
+    width: 60px;
+  }
+  .wrapper .main .navbar .navbar_logo .navbar_search {
+    margin-left: 12px;
+    width: 160px;
+  }
   .wrapper .main .player_radio .player_radio_row {
     padding: 10px 10px;
   }

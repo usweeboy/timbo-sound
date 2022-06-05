@@ -14,31 +14,36 @@
 <div class="wrapper">
   <main class="main" id="main">
     <nav class="navbar">
-      <form class="navbar_search">
-        <img src="img/icons/search.svg" alt="">
-        <input type="search" name="" id="input_search_music" class="input_search_music" placeholder="Поиск">
-      </form>
+      <div class="navbar_logo">
+        <img src="img/icons/logo-timbosound.png" class="navbar_menu_logo" alt="">
+        <form class="navbar_search">
+          <img src="img/icons/search.svg" alt="">
+          <input type="search" name="" id="input_search_music" class="input_search_music" placeholder="Поиск">
+        </form>
+      </div>
       <div class="navbar_menu">
         <img src="img/icons/burger-menu.svg" alt="" id="navbar_menu">
-        <img src="img/icons/close.svg" alt="" id="navbar_menu_close">
+      </div>
+      <div class="navbar_menu_content" id="navbar_menu_content">
+        <div class="navbar_menu_content_close">
+          <img src="img/icons/close.svg" alt="" id="navbar_menu_close">
+        </div>
+        <ul class="navbar_list">
+          <li id="router_to_main">
+            <img src="img/icons/home-outline.svg" alt="">
+            <p>Главная</p>
+          </li>
+          <li id="router_to_favorite">
+            <img src="img/icons/bookmarks-outline.svg" alt="">
+            <p>Моя музыка</p>
+          </li>
+          <li id="router_to_radio">
+            <img src="img/icons/radio-outline.svg" alt="">
+            <p>Онлайн радио</p>
+          </li>
+        </ul>
       </div>
     </nav>
-    <div class="navbar_menu_content" id="navbar_menu_content">
-      <ul class="navbar_list">
-        <li id="router_to_main">
-          <img src="img/icons/home-outline.svg" alt="">
-          <p>Главная</p>
-        </li>
-        <li id="router_to_favorite">
-          <img src="img/icons/bookmarks-outline.svg" alt="">
-          <p>Моя музыка</p>
-        </li>
-        <li id="router_to_radio">
-          <img src="img/icons/radio-outline.svg" alt="">
-          <p>Онлайн радио</p>
-        </li>
-      </ul>
-    </div>
     <div class="player_music" id="player_music">
       <h2>Сейчас играет</h2>
       <div class="player_music_row">
